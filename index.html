@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Astroid</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc1/css/bootstrap.css">
+	<style>
+		body {
+			padding-top: 60px;
+			/* background-color: #eee; */
+		}
+		.list-group-item {
+			padding: 5px 20px 5px 10px;
+		}
+	</style>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<button class="navbar-toggle" data-toggle="collapse" data-target="navbar-responsive-collapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<a href="#" class="navbar-brand">Astroid</a>
+	<div class="nav-collapse collapse navbar-responsive-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Help</a></li>
+		</ul>
+		<button type="button" class="btn btn-default navbar-btn pull-right">Sign in</button>
+	</div>
+</div>
+<div class="container">
+<div class="row">
+	<div class="col-lg-9">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="well">
+					<div class="profile">
+						<h3>Adel Qalieh</h3>
+					</div>
+					<hr>
+					<div class="list-group">
+						<a href="#" class="list-group-item active">All tasks</a>
+						<a href="#" class="list-group-item">Not in a list</a>
+						<a href="#" class="list-group-item">I've Assigned</a>
+						<a href="#" class="list-group-item">Assigned to me</a>
+						<a href="#" class="list-group-item">Shared Tasks</a>
+					</div>
+				</div>
+				<div class="well" style="padding: 0px;">
+					<ul class="nav nav-tabs nav-justified">
+						<li class="active"><a href="#">Lists</a></li>
+						<li><a href="#">People</a></li>
+					</ul>
+					<div style="padding: 0px 19px 19px 19px;">
+					<div class="btn-group btn-group-justified" style="padding: 4% 0%">
+						<a href="#addList" data-toggle="modal" class="btn btn-primary">Add List</a>
+						<a href="#" class="btn btn-info">Add Folder</a>
+					</div>
+					<div class="list-group">
+						<a href="#" class="list-group-item active"><span class="badge">4</span>Home</a>
+						<a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
+						<a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
+						<a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="well">
+					<h3 style="padding-bottom: 10px;">My Tasks</h3>
+					<form action="submit" class="form-inline">
+						<div style="width: 100%;">
+							<input type="text" class="form-control" placeholder="Add a new task..." style="width: auto;">
+							<button type="submit" class="btn btn-primary">Add a Task</button>
+						</div>
+					</form>
+					<hr>
+					<div class="col-lg-6 text-left dropdown">
+						<a href="#" data-toggle="dropdown">Filter: Uncompleted</a>
+						<ul class="dropdown-menu" role="menu" arial-labelledby="dLabel">
+							<li><a href="#">Uncompleted</a></li>
+							<li><a href="#">Not in my lists</a></li>
+							<li><a href="#">Due today</a></li>
+							<li><a href="#">Due soon</a></li>
+							<li><a href="#">Overdue</a></li>
+							<li><a href="#">Repeating</a></li>
+							<li><a href="#">Completed</a></li>
+							<li><a href="#">Everything</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-6 text-right dropdown">
+						<a href="#" data-toggle="dropdown">Sort by: Auto</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Auto</a></li>
+							<li><a href="#">Manual</a></li>
+							<li><a href="#">Priority</a></li>
+							<li><a href="#">Due date</a></li>
+							<li><a href="#">Date created</a></li>
+							<li><a href="#">Date completed</a></li>
+							<li><a href="#">Last modified</a></li>
+							<li><a href="#">A to Z</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="well" style="padding: 0px;">
+			<ul class="nav nav-tabs nav-justified">
+				<li class="active"><a href="#">Activity</a></li>
+				<li><a href="#">Chart</a></li>
+			</ul>
+			<div class="text-center" style="padding: 19px 19px 19px 19px;">
+				<b class="text-muted">No recent activity</b>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="footer">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
