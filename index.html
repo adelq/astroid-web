@@ -16,9 +16,27 @@
 		#signin {
 			width: 100%;
 		}
+		#addTaskInput {
+			width: 100%;
+		}
+		#addTaskInput input {
+			width: 75%;
+		}
+		#addTaskInput button {
+			width: 24%;
+		}
 		@media (max-width: 768px) {
 			#signin {
 				margin-top: -25px;
+			}
+		}
+		@media (max-width: 480px) {
+			#addTaskInput input {
+				width: 100%;
+				margin-bottom: 15px;
+			}
+			#addTaskInput button {
+				width: 100%;
 			}
 		}
 	</style>
@@ -83,8 +101,8 @@
 				<div class="well">
 					<h3 style="padding-bottom: 10px;">My Tasks</h3>
 					<form action="submit" class="form-inline">
-						<div style="width: 100%;">
-							<input type="text" class="form-control" placeholder="Add a new task..." style="width: auto;">
+						<div id="addTaskInput">
+							<input type="text" class="form-control" placeholder="Add a new task...">
 							<button type="submit" class="btn btn-primary">Add a Task</button>
 						</div>
 					</form>
