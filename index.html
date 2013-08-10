@@ -13,6 +13,14 @@
 		.list-group-item {
 			padding: 5px 20px 5px 10px;
 		}
+		#signin {
+			width: 100%;
+		}
+		@media (max-width: 768px) {
+			#signin {
+				margin-top: -25px;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -29,7 +37,9 @@
 			<li><a href="#">About</a></li>
 			<li><a href="#">Help</a></li>
 		</ul>
-		<button type="button" class="btn btn-default navbar-btn pull-right">Sign in</button>
+		<ul class="nav navbar-nav pull-right">
+			<li><button type="button" class="btn btn-default navbar-btn" id="signin">Sign in</button></li>
+		</ul>
 	</div>
 </div>
 <div class="container">
