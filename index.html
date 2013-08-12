@@ -85,21 +85,34 @@
 				</div>
 				<div class="well" style="padding: 0px;">
 					<ul class="nav nav-tabs nav-justified">
-						<li class="active"><a href="#">Lists</a></li>
-						<li><a href="#">People</a></li>
+						<li class="active"><a href="#lists" data-toggle="tab">Lists</a></li>
+						<li><a href="#people" data-toggle="tab">People</a></li>
 					</ul>
-					<div style="padding: 0px 19px 19px 19px;">
-					<div class="btn-group btn-group-justified" style="padding: 4% 0%">
-						<a href="#addList" data-toggle="modal" class="btn btn-primary">Add List</a>
-						<a href="#addFolder" data-toggle="modal" class="btn btn-info">Add Folder</a>
-					</div>
-					<div class="list-group">
-						<a href="#" class="list-group-item active"><span class="badge">4</span>Home</a>
-						<a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
-						<a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
-						<a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
-					</div>
-					</div>
+					<div class="tab-content">
+						<div class="tab-pane fade active in" id="lists" style="padding: 0px 19px 19px 19px;">
+							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
+								<a href="#addList" data-toggle="modal" class="btn btn-primary">Add List</a>
+								<a href="#addFolder" data-toggle="modal" class="btn btn-info">Add Folder</a>
+							</div>
+							<div class="list-group">
+								<a href="#" class="list-group-item active"><span class="badge">4</span>Home</a>
+								<a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
+								<a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
+								<a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="people" style="padding: 0px 19px 19px 19px;">
+							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
+								<a href="#addFriend" data-toggle="modal" class="btn btn-primary">Add Friend</a>
+								<a href="#shareToFriend" data-toggle="modal" class="btn btn-info">Share to Friend</a>
+							</div>
+							<div class="list-group">
+								<a href="#" class="list-group-item active"><span class="badge">2</span>Adel Qalieh</a>
+								<a href="#" class="list-group-item"><span class="badge">0</span>Manotej Meka</a>
+								<a href="#" class="list-group-item"><span class="badge">13</span>Prakhar Bhandari</a>
+							</div>
+						</div>
+					</div>	
 				</div>
 			</div>
 			<div class="col-12 col-sm-8 col-lg-8">
