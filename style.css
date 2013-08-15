@@ -20,6 +20,17 @@ body {
 #signin {
 	width: 100%;
 }
+.profile img {
+	position: absolute;
+	height: 48px;
+	width: 48px;
+}
+.profile h4 {
+	padding: 13px 0 10px 60px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 #filters hr {
 	margin-top: 15px;
 	margin-bottom: 5px;
