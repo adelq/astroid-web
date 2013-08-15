@@ -25,6 +25,29 @@
 		#addTaskInput button {
 			width: 24%;
 		}
+		.taskList {
+			padding-top: 10px;
+		}
+		.taskListItem {
+			padding: 8px 0 8px 5px;
+			border-bottom: 1px solid #d3d7cf;
+		}
+		.completeBox {
+			height: 28px;
+			width: 28px;
+			position: absolute;
+			margin-top: 5px;
+			border: 3px solid #00a5e6;
+			-moz-border-radius: 25%;
+			border-radius: 25%;
+		}
+		.taskRowTop {
+			padding-left: 45px;
+			cursor: pointer;
+		}
+		.taskRowBottom {
+			padding: 1px 0px 1px 45px;
+		}
 		@media (max-width: 768px) {
 			#signin {
 				margin-top: -25px;
@@ -152,7 +175,44 @@
 								<li><a href="#">A to Z</a></li>
 							</ul>
 						</div>
-					</div>	
+					</div>
+					<div class="taskList">
+						<div class="taskListItem">
+							<a href="#" class="completeBox"></a>
+							<div class="taskRowTop">Lorem ipsum dolor sit</div>
+							<small class="taskRowBottom">
+								<span class="dueDate text-danger">4 July 2012</span> | <span class="taskItemList">Home</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox" style="border: 3px solid #a0222a;"></a>
+							<div class="taskRowTop">Dolor, provident odit pariatur</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">21 Aug 2012</span> | <span class="taskItemList">Programming</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox" style="border: 3px solid #fbb03b;"></a>
+							<div class="taskRowTop">Aperiam, eos, mollitia! Iure</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">16 Oct 2012</span> | <span class="taskItemList">Personal</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox"></a>
+							<div class="taskRowTop">Quae porro accusamus molestias</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">16 Oct 2012</span> | <span class="taskItemList">Programming</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox"></a>
+							<div class="taskRowTop">Sed, saepe qui a</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">28 Nov 2012</span> | <span class="taskItemList">Programming</span>
+							</small>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
