@@ -50,9 +50,6 @@ body {
 .tasksHeading {
 	padding-bottom: 10px;
 }
-.taskList {
-	padding-top: 10px;
-}
 .taskListItem {
 	padding: 8px 0 8px 5px;
 	border-bottom: 1px solid #d3d7cf;
