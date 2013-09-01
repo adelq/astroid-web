@@ -17,6 +17,9 @@ body {
 	background-color: #3a3c3c;
 	border-color: #2e2f2f;
 }
+.navbar-collapse .navbar-nav.navbar-right:last-child {
+	margin-right: 0;
+}
 #signin {
 	width: 100%;
 }
