@@ -4,86 +4,27 @@
 	<meta charset="UTF-8">
 	<title>Astroid</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc1/css/bootstrap.css">
-	<style>
-		body {
-			padding-top: 60px;
-			/* background-color: #eee; */
-		}
-		.list-group-item {
-			padding: 5px 20px 5px 10px;
-		}
-		#signin {
-			width: 100%;
-		}
-		#addTaskInput {
-			width: 100%;
-		}
-		#addTaskInput input {
-			width: 75%;
-		}
-		#addTaskInput button {
-			width: 24%;
-		}
-		.taskList {
-			padding-top: 10px;
-		}
-		.taskListItem {
-			padding: 8px 0 8px 5px;
-			border-bottom: 1px solid #d3d7cf;
-		}
-		.completeBox {
-			height: 28px;
-			width: 28px;
-			position: absolute;
-			margin-top: 5px;
-			border: 3px solid #00a5e6;
-			-moz-border-radius: 25%;
-			border-radius: 25%;
-		}
-		.taskRowTop {
-			padding-left: 45px;
-			cursor: pointer;
-		}
-		.taskRowBottom {
-			padding: 1px 0px 1px 45px;
-		}
-		@media (max-width: 768px) {
-			#signin {
-				margin-top: -25px;
-			}
-		}
-		@media (max-width: 480px) {
-			#addTaskInput input {
-				width: 100%;
-				margin-bottom: 15px;
-			}
-			#addTaskInput button {
-				width: 100%;
-			}
-		}
-		@media (max-width: 300px) {
-			#filters {
-				display: none;
-			}
-		}
-	</style>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<button class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</button>
-	<a href="#" class="navbar-brand">Astroid</a>
-	<div class="nav-collapse collapse navbar-responsive-collapse">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a href="#" class="navbar-brand">Astroid</a>
+	</div>
+	<div class="navbar-collapse collapse navbar-responsive-collapse">
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="#">Help</a></li>
 		</ul>
-		<ul class="nav navbar-nav pull-right">
+		<ul class="nav navbar-nav navbar-right" style="text-align: center;">
 			<li><button type="button" class="btn btn-default navbar-btn" id="signin">Sign in</button></li>
 		</ul>
 	</div>
@@ -92,10 +33,11 @@
 <div class="row">
 	<div class="col-lg-9">
 		<div class="row">
-			<div class="col-sm-4 col-lg-4 hidden-sm">
+			<div class="col-sm-4 col-lg-4 hidden-xs">
 				<div class="well">
 					<div class="profile">
-						<h3>Adel Qalieh</h3>
+						<img src="http://placekitten.com/100/100" alt="Placeholder" class="img-circle">
+						<h4>Adel Qalieh</h4>
 					</div>
 					<hr>
 					<div class="list-group">
@@ -127,7 +69,7 @@
 						<div class="tab-pane fade" id="people" style="padding: 0px 19px 19px 19px;">
 							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
 								<a href="#addFriend" data-toggle="modal" class="btn btn-primary">Add Friend</a>
-								<a href="#shareToFriend" data-toggle="modal" class="btn btn-info">Share to Friend</a>
+								<a href="#shareToFriend" data-toggle="modal" class="btn btn-info">Share</a>
 							</div>
 							<div class="list-group">
 								<a href="#" class="list-group-item active"><span class="badge">2</span>Adel Qalieh</a>
@@ -138,18 +80,20 @@
 					</div>	
 				</div>
 			</div>
-			<div class="col-12 col-sm-8 col-lg-8">
+			<div class="col-xs-12 col-sm-8 col-lg-8">
 				<div class="well">
-					<h3 style="padding-bottom: 10px;">My Tasks</h3>
-					<form action="submit" class="form-inline">
-						<div id="addTaskInput">
-							<input type="text" class="form-control" placeholder="Add a new task...">
-							<button type="submit" class="btn btn-primary">Add a Task</button>
+					<h3 class="tasksHeading">My Tasks</h3>
+					<form action="submit" class="form-inline" role="form">
+						<div class="form-group">
+							<div id="addTaskInput">
+								<input type="text" class="form-control" placeholder="Add a new task...">
+								<button type="submit" class="btn btn-primary">Add a Task</button>
+							</div>
 						</div>
 					</form>
 					<div class="row" id="filters">
 					<hr>
-						<div class="col-6 text-left dropdown">
+						<div class="col-xs-6 text-left dropdown">
 							<a href="#" data-toggle="dropdown">Filter: Uncompleted</a>
 							<ul class="dropdown-menu" role="menu" arial-labelledby="dLabel">
 								<li><a href="#">Uncompleted</a></li>
@@ -162,7 +106,7 @@
 								<li><a href="#">Everything</a></li>
 							</ul>
 						</div>
-						<div class="col-6 text-right dropdown">
+						<div class="col-xs-6 text-right dropdown">
 							<a href="#" data-toggle="dropdown">Sort by: Auto</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="#">Auto</a></li>
@@ -367,7 +311,7 @@
 </div>
 <div class="footer">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </div>
 </body>
 </html>
