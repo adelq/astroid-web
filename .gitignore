@@ -1,0 +1,35 @@
+### Linux ###
+.*
+!.gitignore
+!.git*
+*~
+
+
+### SublimeText ###
+# SublimeText project files
+*.sublime-workspace
+
+### Emacs ###
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+### vim ###
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+### Meteor ###
+.meteor/local
+.meteor/meteorite
