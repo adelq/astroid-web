@@ -313,3 +313,27 @@
 	</div>
 </div>
 </body>
+
+<template name="todos">
+{{#each todo}}
+  <div class="taskListItem">
+    <a href="#" class="completeBox"></a>
+    <div class="taskRowTop">{{task}}</div>
+    <small class="taskRowBottom">
+      <span class="dueDate text-danger">{{dueDate}}</span> | <span class="taskItemList">{{list}}</span>
+    </small>
+  </div>
+{{/each}}
+</template>
+
+<template name="lists">
+{{#each list}}
+<a href="#" class="list-group-item active"><span class="badge">{{numTodos}}</span>{{name}}</a>
+{{/each}}
+</template>
+
+<template name="people">
+{{#each friend}}
+<a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
+{{/each}}
+</template>
