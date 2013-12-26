@@ -86,14 +86,7 @@
 			<div class="col-xs-12 col-sm-8 col-lg-8">
 				<div class="well">
 					<h3 class="tasksHeading">My Tasks</h3>
-					<form action="submit" class="form-inline" role="form">
-						<div class="form-group">
-							<div id="addTaskInput">
-								<input type="text" class="form-control" placeholder="Add a new task...">
-								<button type="submit" class="btn btn-primary">Add a Task</button>
-							</div>
-						</div>
-					</form>
+          {{>newTaskForm}}
 					<div class="row" id="filters">
 					<hr>
 						<div class="col-xs-6 text-left dropdown">
@@ -159,6 +152,7 @@
 								<span class="dueDate">28 Nov 2012</span> | <span class="taskItemList">Programming</span>
 							</small>
 						</div>
+            {{>todos}}
 					</div>
 				</div>
 			</div>
@@ -314,13 +308,24 @@
 </div>
 </body>
 
+<template name="newTaskForm">
+<form id="new-task" class="form-inline" role="form">
+  <div class="form-group">
+    <div id="addTaskInput">
+      <input type="text" id="new-task-text" class="form-control" placeholder="Add a new task...">
+      <button type="submit" id="addTaskButton" class="btn btn-primary">Add a Task</button>
+    </div>
+  </div>
+</form>
+</template>
+
 <template name="todos">
-{{#each todo}}
+{{#each tasks}}
   <div class="taskListItem">
     <a href="#" class="completeBox"></a>
-    <div class="taskRowTop">{{task}}</div>
+    <div class="taskRowTop">{{body}}</div>
     <small class="taskRowBottom">
-      <span class="dueDate text-danger">{{dueDate}}</span> | <span class="taskItemList">{{list}}</span>
+      <span class="dueDate text-danger">{{date}}</span> | <span class="taskItemList">{{list}}</span>
     </small>
   </div>
 {{/each}}
