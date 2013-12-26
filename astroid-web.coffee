@@ -8,8 +8,12 @@ if Meteor.isClient
 
   Template.todos.events
     'click a.completeBox': (e) ->
+      now = moment()
       Tasks.update this._id,
-        $set: completed: not @completed
+        $set:
+          completed: not @completed
+          dateCompleted: now
+          modified: now
 
   Template.newTaskForm.events
     'submit #new-task, click #addTaskButton': (e) ->
