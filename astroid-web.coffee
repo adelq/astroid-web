@@ -6,6 +6,11 @@ if Meteor.isClient
   Template.todos.tasks = ->
     Tasks.find()
 
+  Template.todos.events
+    'click a.completeBox': (e) ->
+      Tasks.update this._id,
+        $set: completed: not @completed
+
   Template.newTaskForm.events
     'submit #new-task, click #addTaskButton': (e) ->
       e.preventDefault()
@@ -23,5 +28,5 @@ if Meteor.isClient
         modified: now
         list: list
         priority: priority
-        complete: false
+        completed: false
         repeating: false
