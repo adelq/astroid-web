@@ -328,7 +328,13 @@
     <div class="taskRowTop">{{body}}</div>
     {{/if}}
     <small class="taskRowBottom">
-      <span class="dueDate text-danger">{{formatDate dateDue}}</span> | <span class="taskItemList">{{list}}</span>
+        {{#overDue dateDue}}
+        <span class="dueDate text-danger">{{formatDate dateDue}}</span>
+        {{else}}
+        <span class="dueDate">{{formatDate dateDue}}</span>
+        {{/overDue}} | <span class="taskItemList">
+        {{list}}
+      </span>
     </small>
   </div>
 {{/each}}
