@@ -33,3 +33,6 @@ if Meteor.isClient
         priority: priority
         completed: false
         repeating: false
+
+  Handlebars.registerHelper 'formatDate', (date) ->
+      moment(date).format('D MMM YYYY')
