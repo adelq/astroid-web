@@ -8,7 +8,7 @@ if Meteor.isClient
 
   Template.todos.events
     'click a.completeBox': (e) ->
-      now = moment()
+      now = new Date()
       Tasks.update this._id,
         $set:
           completed: not @completed
@@ -20,12 +20,11 @@ if Meteor.isClient
       e.preventDefault()
       body = $('#new-task-text').val()
       $('#new-task-text').val("")
-      now = moment()
+      now = new Date()
       priority = 'low'
       list = 'Home'
       Tasks.insert
         body: body
-        date: now.format('D MMM YYYY')
         dateDue: now
         dateCreated: now
         dateCompleted: false
