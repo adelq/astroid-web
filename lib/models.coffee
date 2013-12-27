@@ -1,3 +1,5 @@
-Tasks = new Meteor.Collection("tasks")
-Lists = new Meteor.Collection("lists")
-Folders = new Meteor.Collection("folders")
+root = exports ? this
+
+root.Tasks = new Meteor.Collection("tasks")
+root.Lists = new Meteor.Collection("lists")
+root.Folders = new Meteor.Collection("folders")
