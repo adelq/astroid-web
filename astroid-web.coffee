@@ -8,6 +8,7 @@ if Meteor.isClient
 
   Template.todos.events
     'click a.completeBox': (e) ->
+      e.preventDefault()
       now = new Date()
       Tasks.update this._id,
         $set:

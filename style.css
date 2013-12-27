@@ -67,6 +67,9 @@ body {
 	padding-left: 45px;
 	cursor: pointer;
 }
+.text-line {
+  text-decoration: line-through;
+}
 .taskRowBottom {
 	padding: 1px 0 1px 45px;
 }

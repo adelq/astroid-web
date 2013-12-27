@@ -323,7 +323,11 @@
 {{#each tasks}}
   <div class="taskListItem">
     <a href="#" class="completeBox"></a>
+    {{#if completed}}
+    <div class="taskRowTop text-line">{{body}}</div>
+    {{else}}
     <div class="taskRowTop">{{body}}</div>
+    {{/if}}
     <small class="taskRowBottom">
       <span class="dueDate text-danger">{{formatDate dateDue}}</span> | <span class="taskItemList">{{list}}</span>
     </small>
