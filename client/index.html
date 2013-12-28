@@ -58,7 +58,7 @@
 					<div class="tab-content">
 						<div class="tab-pane fade active in" id="lists" style="padding: 0px 19px 19px 19px;">
 							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
-								<a href="#addList" data-toggle="modal" class="btn btn-primary">Add List</a>
+								<a href="#addListModal" data-toggle="modal" class="btn btn-primary">Add List</a>
 								<a href="#addFolder" data-toggle="modal" class="btn btn-info">Add Folder</a>
 							</div>
 							<div class="list-group">
@@ -66,6 +66,7 @@
 								<a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
 								<a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
 								<a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
+                {{>lists}}
 							</div>
 						</div>
 						<div class="tab-pane fade" id="people" style="padding: 0px 19px 19px 19px;">
@@ -77,6 +78,7 @@
 								<a href="#" class="list-group-item active"><span class="badge">2</span>Adel Qalieh</a>
 								<a href="#" class="list-group-item"><span class="badge">0</span>Manotej Meka</a>
 								<a href="#" class="list-group-item"><span class="badge">13</span>Prakhar Bhandari</a>
+                {{>people}}
 							</div>
 						</div>
 					</div>	
@@ -180,37 +182,7 @@
 </div>
 </div>
 <div class="modals">
-	<div class="modal fade" id="addList">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add a List</h4>
-					<small>Use lists to organize projects, goals, and adventures!</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="listName" class="col-lg-4 control-label">List name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="listName" placeholder="List name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="listDescription" class="col-lg-4 control-label">Description</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="listDescription" placeholder="Description">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Create new list</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  {{>addList}}
 	<div class="modal fade" id="addFolder">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -342,7 +314,7 @@
 
 <template name="lists">
 {{#each list}}
-<a href="#" class="list-group-item active"><span class="badge">{{numTodos}}</span>{{name}}</a>
+<a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
 {{/each}}
 </template>
 
@@ -350,4 +322,38 @@
 {{#each friend}}
 <a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
 {{/each}}
+</template>
+
+<template name="addList">
+	<div id="addListModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Add a List</h4>
+					<small>Use lists to organize projects, goals, and adventures!</small>
+				</div>
+				<div class="modal-body">
+					<form id="addList" class="form-horizontal">
+						<div class="form-group">
+							<label for="listName" class="col-lg-4 control-label">List name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="listName" placeholder="List name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="listDescription" class="col-lg-4 control-label">Description</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="listDescription" placeholder="Description">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="addListButton" type="button" class="btn btn-primary">Create new list</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
