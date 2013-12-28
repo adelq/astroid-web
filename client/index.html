@@ -1,0 +1,359 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Astroid</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Stylesheets -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.css">
+  <!-- Scripts -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a href="#" class="navbar-brand">Astroid</a>
+	</div>
+	<div class="navbar-collapse collapse navbar-responsive-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Help</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" style="text-align: center;">
+			<li><button type="button" class="btn btn-default navbar-btn" id="signin">Sign in</button></li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+<div class="row">
+	<div class="col-lg-9">
+		<div class="row">
+			<div class="col-sm-4 col-lg-4 hidden-xs">
+				<div class="well">
+					<div class="profile">
+						<img src="http://placekitten.com/100/100" alt="Placeholder" class="img-circle">
+						<h4>Adel Qalieh</h4>
+					</div>
+					<hr>
+					<div class="list-group">
+						<a href="#" class="list-group-item active">All tasks</a>
+						<a href="#" class="list-group-item">Not in a list</a>
+						<a href="#" class="list-group-item">I've Assigned</a>
+						<a href="#" class="list-group-item">Assigned to me</a>
+						<a href="#" class="list-group-item">Shared Tasks</a>
+					</div>
+				</div>
+				<div class="well" style="padding: 0px;">
+					<ul class="nav nav-tabs nav-justified">
+						<li class="active"><a href="#lists" data-toggle="tab">Lists</a></li>
+						<li><a href="#people" data-toggle="tab">People</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane fade active in" id="lists" style="padding: 0px 19px 19px 19px;">
+							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
+								<a href="#addListModal" data-toggle="modal" class="btn btn-primary">Add List</a>
+								<a href="#addFolder" data-toggle="modal" class="btn btn-info">Add Folder</a>
+							</div>
+							<div class="list-group">
+								<a href="#" class="list-group-item active"><span class="badge">4</span>Home</a>
+								<a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
+								<a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
+								<a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
+                {{>lists}}
+							</div>
+						</div>
+						<div class="tab-pane fade" id="people" style="padding: 0px 19px 19px 19px;">
+							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
+								<a href="#addFriend" data-toggle="modal" class="btn btn-primary">Add Friend</a>
+								<a href="#shareToFriend" data-toggle="modal" class="btn btn-info">Share</a>
+							</div>
+							<div class="list-group">
+								<a href="#" class="list-group-item active"><span class="badge">2</span>Adel Qalieh</a>
+								<a href="#" class="list-group-item"><span class="badge">0</span>Manotej Meka</a>
+								<a href="#" class="list-group-item"><span class="badge">13</span>Prakhar Bhandari</a>
+                {{>people}}
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-lg-8">
+				<div class="well">
+					<h3 class="tasksHeading">My Tasks</h3>
+          {{>newTaskForm}}
+					<div class="row" id="filters">
+					<hr>
+						<div class="col-xs-6 text-left dropdown">
+							<a href="#" data-toggle="dropdown">Filter: Uncompleted</a>
+							<ul class="dropdown-menu" role="menu" arial-labelledby="dLabel">
+								<li><a href="#">Uncompleted</a></li>
+								<li><a href="#">Not in my lists</a></li>
+								<li><a href="#">Due today</a></li>
+								<li><a href="#">Due soon</a></li>
+								<li><a href="#">Overdue</a></li>
+								<li><a href="#">Repeating</a></li>
+								<li><a href="#">Completed</a></li>
+								<li><a href="#">Everything</a></li>
+							</ul>
+						</div>
+						<div class="col-xs-6 text-right dropdown">
+							<a href="#" data-toggle="dropdown">Sort by: Auto</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li><a href="#">Auto</a></li>
+								<li><a href="#">Manual</a></li>
+								<li><a href="#">Priority</a></li>
+								<li><a href="#">Due date</a></li>
+								<li><a href="#">Date created</a></li>
+								<li><a href="#">Date completed</a></li>
+								<li><a href="#">Last modified</a></li>
+								<li><a href="#">A to Z</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="taskList">
+						<div class="taskListItem">
+							<a href="#" class="completeBox"></a>
+							<div class="taskRowTop">Lorem ipsum dolor sit</div>
+							<small class="taskRowBottom">
+								<span class="dueDate text-danger">4 July 2012</span> | <span class="taskItemList">Home</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox" style="border: 3px solid #a0222a;"></a>
+							<div class="taskRowTop">Dolor, provident odit pariatur</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">21 Aug 2012</span> | <span class="taskItemList">Programming</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox" style="border: 3px solid #fbb03b;"></a>
+							<div class="taskRowTop">Aperiam, eos, mollitia! Iure</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">16 Oct 2012</span> | <span class="taskItemList">Personal</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox"></a>
+							<div class="taskRowTop">Quae porro accusamus molestias</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">16 Oct 2012</span> | <span class="taskItemList">Programming</span>
+							</small>
+						</div>
+						<div class="taskListItem">
+							<a href="#" class="completeBox"></a>
+							<div class="taskRowTop">Sed, saepe qui a</div>
+							<small class="taskRowBottom">
+								<span class="dueDate">28 Nov 2012</span> | <span class="taskItemList">Programming</span>
+							</small>
+						</div>
+            {{>todos}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 visible-lg">
+		<div class="well" style="padding: 0px;">
+			<ul class="nav nav-tabs nav-justified">
+				<li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
+				<li><a href="#chart" data-toggle="tab">Chart</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="activity" style="padding: 19px 19px 19px 19px;">
+					<div class="text-center">
+						<b class="text-muted">No recent activity</b>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="chart" style="padding: 19px 19px 19px 19px;">
+					<div class="text-center">
+						<img src="chart.svg" alt="Sample recent activity chart">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="modals">
+  {{>addList}}
+	<div class="modal fade" id="addFolder">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Add a Folder</h4>
+					<small>Use folders to group your lists into bigger projects.</small>
+				</div>
+				<div class="modal-body">
+					<form action="submit" class="form-horizontal">
+						<div class="form-group">
+							<label for="listName" class="col-lg-4 control-label">Folder name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="folderName" placeholder="Folder name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="folderDescription" class="col-lg-4 control-label">Description</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="folderDescription" placeholder="Description">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Create new folder</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="addFriend">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Add a Friend</h4>
+					<small>Add friends to assign tasks and get motivated :)</small>
+				</div>
+				<div class="modal-body">
+					<form action="submit" class="form-horizontal">
+						<div class="form-group">
+							<label for="friendName" class="col-lg-4 control-label">Friend's name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="friendName" placeholder="Friend name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="friendEmail" class="col-lg-4 control-label">Email</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="friendEmail" placeholder="Friend's email address">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Add friend</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="shareToFriend">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Share to a Friend</h4>
+					<small>Share list by email for viewing only</small>
+				</div>
+				<div class="modal-body">
+					<form action="submit" class="form-horizontal">
+						<div class="form-group">
+							<label for="friendName" class="col-lg-4 control-label">Friend's name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="friendName" placeholder="Friend name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="friendEmail" class="col-lg-4 control-label">Email</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="friendEmail" placeholder="Friend's email address">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Add friend</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+<template name="newTaskForm">
+<form id="new-task" class="form-inline" role="form">
+  <div class="form-group">
+    <div id="addTaskInput">
+      <input type="text" id="new-task-text" class="form-control" placeholder="Add a new task...">
+      <button type="submit" id="addTaskButton" class="btn btn-primary">Add a Task</button>
+    </div>
+  </div>
+</form>
+</template>
+
+<template name="todos">
+{{#each tasks}}
+  <div class="taskListItem">
+    <a href="#" class="completeBox"></a>
+    {{#if completed}}
+    <div class="taskRowTop text-line">{{body}}</div>
+    {{else}}
+    <div class="taskRowTop">{{body}}</div>
+    {{/if}}
+    <small class="taskRowBottom">
+        {{#overDue dateDue}}
+        <span class="dueDate text-danger">{{formatDate dateDue}}</span>
+        {{else}}
+        <span class="dueDate">{{formatDate dateDue}}</span>
+        {{/overDue}} | <span class="taskItemList">
+        {{list}}
+      </span>
+    </small>
+  </div>
+{{/each}}
+</template>
+
+<template name="lists">
+{{#each list}}
+<a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
+{{/each}}
+</template>
+
+<template name="people">
+{{#each friend}}
+<a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
+{{/each}}
+</template>
+
+<template name="addList">
+	<div id="addListModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Add a List</h4>
+					<small>Use lists to organize projects, goals, and adventures!</small>
+				</div>
+				<div class="modal-body">
+					<form id="addList" class="form-horizontal">
+						<div class="form-group">
+							<label for="listName" class="col-lg-4 control-label">List name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="listName" placeholder="List name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="listDescription" class="col-lg-4 control-label">Description</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="listDescription" placeholder="Description">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="addListButton" type="button" class="btn btn-primary">Create new list</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
