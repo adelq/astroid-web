@@ -1,3 +1,6 @@
+Session.setDefault("filter", "everything")
+Session.setDefault("sort", "auto")
+
 Template.todos.tasks = ->
   Tasks.find()
 
