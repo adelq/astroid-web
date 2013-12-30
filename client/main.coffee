@@ -43,6 +43,7 @@ Template.newTaskForm.events
     list = 'Adel'
     Tasks.insert
       body: body
+      description: false
       dateDue: moment(now).add('w', 1).toDate()
       dateCreated: now
       dateCompleted: false
@@ -50,7 +51,9 @@ Template.newTaskForm.events
       list: list
       priority: priority
       completed: false
-      repeating: false
+      repeat: false
+      createdby: 'me'
+      assignedto: 'me'
     list = Lists.findOne
       name: list
     Lists.update list._id,
