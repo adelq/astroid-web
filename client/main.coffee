@@ -68,3 +68,4 @@ Template.addList.events
       name: listName
       description: listDescription
       numTodos: 0
+    $('#addListModal').modal('toggle')
