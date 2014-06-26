@@ -1,11 +1,13 @@
-<!doctype html>
-<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Astroid</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.css">
-	<link rel="stylesheet" href="style.css">
+  <!-- Stylesheets -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css">
+  <!-- Scripts -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,7 +58,7 @@
 					<div class="tab-content">
 						<div class="tab-pane fade active in" id="lists" style="padding: 0px 19px 19px 19px;">
 							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
-								<a href="#addList" data-toggle="modal" class="btn btn-primary">Add List</a>
+								<a href="#addListModal" data-toggle="modal" class="btn btn-primary">Add List</a>
 								<a href="#addFolder" data-toggle="modal" class="btn btn-info">Add Folder</a>
 							</div>
 							<div class="list-group">
@@ -64,6 +66,7 @@
 								<a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
 								<a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
 								<a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
+                {{>lists}}
 							</div>
 						</div>
 						<div class="tab-pane fade" id="people" style="padding: 0px 19px 19px 19px;">
@@ -75,6 +78,7 @@
 								<a href="#" class="list-group-item active"><span class="badge">2</span>Adel Qalieh</a>
 								<a href="#" class="list-group-item"><span class="badge">0</span>Manotej Meka</a>
 								<a href="#" class="list-group-item"><span class="badge">13</span>Prakhar Bhandari</a>
+                {{>people}}
 							</div>
 						</div>
 					</div>	
@@ -83,14 +87,7 @@
 			<div class="col-xs-12 col-sm-8 col-lg-8">
 				<div class="well">
 					<h3 class="tasksHeading">My Tasks</h3>
-					<form action="submit" class="form-inline" role="form">
-						<div class="form-group">
-							<div id="addTaskInput">
-								<input type="text" class="form-control" placeholder="Add a new task...">
-								<button type="submit" class="btn btn-primary">Add a Task</button>
-							</div>
-						</div>
-					</form>
+          {{>newTaskForm}}
 					<div class="row" id="filters">
 					<hr>
 						<div class="col-xs-6 text-left dropdown">
@@ -156,6 +153,7 @@
 								<span class="dueDate">28 Nov 2012</span> | <span class="taskItemList">Programming</span>
 							</small>
 						</div>
+						{{>todos}}
 					</div>
 				</div>
 			</div>
@@ -184,135 +182,32 @@
 </div>
 </div>
 <div class="modals">
-	<div class="modal fade" id="addList">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add a List</h4>
-					<small>Use lists to organize projects, goals, and adventures!</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="listName" class="col-lg-4 control-label">List name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="listName" placeholder="List name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="listDescription" class="col-lg-4 control-label">Description</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="listDescription" placeholder="Description">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Create new list</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="addFolder">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add a Folder</h4>
-					<small>Use folders to group your lists into bigger projects.</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="listName" class="col-lg-4 control-label">Folder name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="folderName" placeholder="Folder name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="folderDescription" class="col-lg-4 control-label">Description</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="folderDescription" placeholder="Description">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Create new folder</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="addFriend">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add a Friend</h4>
-					<small>Add friends to assign tasks and get motivated :)</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="friendName" class="col-lg-4 control-label">Friend's name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendName" placeholder="Friend name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="friendEmail" class="col-lg-4 control-label">Email</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendEmail" placeholder="Friend's email address">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Add friend</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="shareToFriend">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Share to a Friend</h4>
-					<small>Share list by email for viewing only</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="friendName" class="col-lg-4 control-label">Friend's name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendName" placeholder="Friend name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="friendEmail" class="col-lg-4 control-label">Email</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendEmail" placeholder="Friend's email address">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Add friend</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="footer">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+  {{>addList}}
+  {{>addFolder}}
+  {{>addFriend}}
+  {{>shareToFriend}}
 </div>
 </body>
-</html>
+
+<template name="newTaskForm">
+<form id="new-task" class="form-inline" role="form">
+  <div class="form-group">
+    <div id="addTaskInput">
+      <input type="text" id="new-task-text" class="form-control" placeholder="Add a new task...">
+      <button type="submit" id="addTaskButton" class="btn btn-primary">Add a Task</button>
+    </div>
+  </div>
+</form>
+</template>
+
+<template name="lists">
+{{#each list}}
+<a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
+{{/each}}
+</template>
+
+<template name="people">
+{{#each friend}}
+<a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
+{{/each}}
+</template>
