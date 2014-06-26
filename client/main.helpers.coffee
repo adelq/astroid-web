@@ -1,8 +1,5 @@
-Handlebars.registerHelper 'formatDate', (date) ->
+UI.registerHelper 'formatDate', (date) ->
   moment(date).format('D MMM YYYY')
 
-Handlebars.registerHelper 'overDue', (date, options) ->
-  if moment(date).isBefore()
-    options.fn this
-  else
-    options.inverse this
+UI.registerHelper 'overDue', (date) ->
+  moment(date).isBefore()
