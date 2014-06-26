@@ -183,99 +183,9 @@
 </div>
 <div class="modals">
   {{>addList}}
-	<div class="modal fade" id="addFolder">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add a Folder</h4>
-					<small>Use folders to group your lists into bigger projects.</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="listName" class="col-lg-4 control-label">Folder name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="folderName" placeholder="Folder name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="folderDescription" class="col-lg-4 control-label">Description</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="folderDescription" placeholder="Description">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Create new folder</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="addFriend">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add a Friend</h4>
-					<small>Add friends to assign tasks and get motivated :)</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="friendName" class="col-lg-4 control-label">Friend's name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendName" placeholder="Friend name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="friendEmail" class="col-lg-4 control-label">Email</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendEmail" placeholder="Friend's email address">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Add friend</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="shareToFriend">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Share to a Friend</h4>
-					<small>Share list by email for viewing only</small>
-				</div>
-				<div class="modal-body">
-					<form action="submit" class="form-horizontal">
-						<div class="form-group">
-							<label for="friendName" class="col-lg-4 control-label">Friend's name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendName" placeholder="Friend name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="friendEmail" class="col-lg-4 control-label">Email</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="friendEmail" placeholder="Friend's email address">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Add friend</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  {{>addFolder}}
+  {{>addFriend}}
+  {{>shareToFriend}}
 </div>
 </body>
 
@@ -300,38 +210,4 @@
 {{#each friend}}
 <a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
 {{/each}}
-</template>
-
-<template name="addList">
-	<div id="addListModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add a List</h4>
-					<small>Use lists to organize projects, goals, and adventures!</small>
-				</div>
-				<div class="modal-body">
-					<form id="addList" class="form-horizontal">
-						<div class="form-group">
-							<label for="listName" class="col-lg-4 control-label">List name</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="listName" placeholder="List name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="listDescription" class="col-lg-4 control-label">Description</label>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="listDescription" placeholder="Description">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button id="addListButton" type="button" class="btn btn-primary">Create new list</button>
-				</div>
-			</div>
-		</div>
-	</div>
 </template>
