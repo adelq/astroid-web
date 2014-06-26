@@ -3,11 +3,11 @@
 	<title>Astroid</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Stylesheets -->
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css">
   <!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -153,7 +153,7 @@
 								<span class="dueDate">28 Nov 2012</span> | <span class="taskItemList">Programming</span>
 							</small>
 						</div>
-            {{>todos}}
+						{{>todos}}
 					</div>
 				</div>
 			</div>
@@ -288,28 +288,6 @@
     </div>
   </div>
 </form>
-</template>
-
-<template name="todos">
-{{#each tasks}}
-  <div class="taskListItem">
-    <a href="#" class="completeBox"></a>
-    {{#if completed}}
-    <div class="taskRowTop text-line">{{body}}</div>
-    {{else}}
-    <div class="taskRowTop">{{body}}</div>
-    {{/if}}
-    <small class="taskRowBottom">
-        {{#overDue dateDue}}
-        <span class="dueDate text-danger">{{formatDate dateDue}}</span>
-        {{else}}
-        <span class="dueDate">{{formatDate dateDue}}</span>
-        {{/overDue}} | <span class="taskItemList">
-        {{list}}
-      </span>
-    </small>
-  </div>
-{{/each}}
 </template>
 
 <template name="lists">
