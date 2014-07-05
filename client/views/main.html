@@ -189,17 +189,6 @@
 </div>
 </body>
 
-<template name="newTaskForm">
-<form id="new-task" class="form-inline" role="form">
-  <div class="form-group">
-    <div id="addTaskInput">
-      <input type="text" id="new-task-text" class="form-control" placeholder="Add a new task...">
-      <button type="submit" id="addTaskButton" class="btn btn-primary">Add a Task</button>
-    </div>
-  </div>
-</form>
-</template>
-
 <template name="lists">
 {{#each list}}
 <a href="#" class="list-group-item"><span class="badge">{{numTodos}}</span>{{name}}</a>
