@@ -5,7 +5,7 @@ Template.newTaskForm.events
     $('#new-task-text').val("")
     now = new Date()
     priority = 'low'
-    list = 'Adel'
+    list = 'Home'
     Tasks.insert
       body: body
       dateDue: moment(now).add('w', 1).toDate()
