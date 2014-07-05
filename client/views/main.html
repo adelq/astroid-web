@@ -10,112 +10,20 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a href="#" class="navbar-brand">Astroid</a>
-	</div>
-	<div class="navbar-collapse collapse navbar-responsive-collapse">
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Help</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right" style="text-align: center;">
-			<li><button type="button" class="btn btn-default navbar-btn" id="signin">Sign in</button></li>
-		</ul>
-	</div>
-</div>
+{{>navbar}}
 <div class="container">
 <div class="row">
 	<div class="col-lg-9">
 		<div class="row">
-			<div class="col-sm-4 col-lg-4 hidden-xs">
-				<div class="well">
-					<div class="profile">
-						<img src="http://placekitten.com/100/100" alt="Placeholder" class="img-circle">
-						<h4>Adel Qalieh</h4>
-					</div>
-					<hr>
-					<div class="list-group">
-						<a href="#" class="list-group-item active">All tasks</a>
-						<a href="#" class="list-group-item">Not in a list</a>
-						<a href="#" class="list-group-item">I've Assigned</a>
-						<a href="#" class="list-group-item">Assigned to me</a>
-						<a href="#" class="list-group-item">Shared Tasks</a>
-					</div>
-				</div>
-				<div class="well" style="padding: 0px;">
-					<ul class="nav nav-tabs nav-justified">
-						<li class="active"><a href="#lists" data-toggle="tab">Lists</a></li>
-						<li><a href="#people" data-toggle="tab">People</a></li>
-					</ul>
-					<div class="tab-content">
-						<div class="tab-pane fade active in" id="lists" style="padding: 0px 19px 19px 19px;">
-							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
-								<a href="#addListModal" data-toggle="modal" class="btn btn-primary">Add List</a>
-								<a href="#addFolder" data-toggle="modal" class="btn btn-info">Add Folder</a>
-							</div>
-							<div class="list-group">
-								<a href="#" class="list-group-item active"><span class="badge">4</span>Home</a>
-								<a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
-								<a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
-								<a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
-                {{>lists}}
-							</div>
-						</div>
-						<div class="tab-pane fade" id="people" style="padding: 0px 19px 19px 19px;">
-							<div class="btn-group btn-group-justified" style="padding: 4% 0%">
-								<a href="#addFriend" data-toggle="modal" class="btn btn-primary">Add Friend</a>
-								<a href="#shareToFriend" data-toggle="modal" class="btn btn-info">Share</a>
-							</div>
-							<div class="list-group">
-								<a href="#" class="list-group-item active"><span class="badge">2</span>Adel Qalieh</a>
-								<a href="#" class="list-group-item"><span class="badge">0</span>Manotej Meka</a>
-								<a href="#" class="list-group-item"><span class="badge">13</span>Prakhar Bhandari</a>
-                {{>people}}
-							</div>
-						</div>
-					</div>	
-				</div>
-			</div>
+			{{>sidebarLeft}}
 			<div class="col-xs-12 col-sm-8 col-lg-8">
 				<div class="well">
 					<h3 class="tasksHeading">My Tasks</h3>
-          {{>newTaskForm}}
+					{{>newTaskForm}}
 					<div class="row" id="filters">
 					<hr>
-						<div class="col-xs-6 text-left dropdown">
-							<a href="#" data-toggle="dropdown">Filter: Uncompleted</a>
-							<ul class="dropdown-menu" role="menu" arial-labelledby="dLabel">
-								<li><a href="#">Uncompleted</a></li>
-								<li><a href="#">Not in my lists</a></li>
-								<li><a href="#">Due today</a></li>
-								<li><a href="#">Due soon</a></li>
-								<li><a href="#">Overdue</a></li>
-								<li><a href="#">Repeating</a></li>
-								<li><a href="#">Completed</a></li>
-								<li><a href="#">Everything</a></li>
-							</ul>
-						</div>
-						<div class="col-xs-6 text-right dropdown">
-							<a href="#" data-toggle="dropdown">Sort by: Auto</a>
-							<ul class="dropdown-menu pull-right" role="menu">
-								<li><a href="#">Auto</a></li>
-								<li><a href="#">Manual</a></li>
-								<li><a href="#">Priority</a></li>
-								<li><a href="#">Due date</a></li>
-								<li><a href="#">Date created</a></li>
-								<li><a href="#">Date completed</a></li>
-								<li><a href="#">Last modified</a></li>
-								<li><a href="#">A to Z</a></li>
-							</ul>
-						</div>
+						{{>filters}}
+						{{>sortBy}}
 					</div>
 					<div class="taskList">
 						<div class="taskListItem">
@@ -159,46 +67,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-3 visible-lg">
-		<div class="well" style="padding: 0px;">
-			<ul class="nav nav-tabs nav-justified">
-				<li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
-				<li><a href="#chart" data-toggle="tab">Chart</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane fade active in" id="activity" style="padding: 19px 19px 19px 19px;">
-					<div class="text-center">
-						<b class="text-muted">No recent activity</b>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="chart" style="padding: 19px 19px 19px 19px;">
-					<div class="text-center">
-						<img src="chart.svg" alt="Sample recent activity chart">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+{{>sidebarRight}}
 </div>
 </div>
-<div class="modals">
-  {{>addList}}
-  {{>addFolder}}
-  {{>addFriend}}
-  {{>shareToFriend}}
-</div>
+{{>modals}}
 </body>
-
-<template name="newTaskForm">
-<form id="new-task" class="form-inline" role="form">
-  <div class="form-group">
-    <div id="addTaskInput">
-      <input type="text" id="new-task-text" class="form-control" placeholder="Add a new task...">
-      <button type="submit" id="addTaskButton" class="btn btn-primary">Add a Task</button>
-    </div>
-  </div>
-</form>
-</template>
 
 <template name="lists">
 {{#each list}}

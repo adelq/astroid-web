@@ -1,0 +1,51 @@
+<template name="sidebarLeft">
+  <div class="col-sm-4 col-lg-4 hidden-xs">
+    <div class="well">
+      <div class="profile">
+        <img src="http://placekitten.com/100/100" alt="Placeholder" class="img-circle">
+        <h4>Adel Qalieh</h4>
+      </div>
+      <hr>
+      <div class="list-group">
+        <a href="#" class="list-group-item active">All tasks</a>
+        <a href="#" class="list-group-item">Not in a list</a>
+        <a href="#" class="list-group-item">I've Assigned</a>
+        <a href="#" class="list-group-item">Assigned to me</a>
+        <a href="#" class="list-group-item">Shared Tasks</a>
+      </div>
+    </div>
+    <div class="well" style="padding: 0px;">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a href="#lists" data-toggle="tab">Lists</a></li>
+        <li><a href="#people" data-toggle="tab">People</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade active in" id="lists" style="padding: 0px 19px 19px 19px;">
+          <div class="btn-group btn-group-justified" style="padding: 4% 0%">
+            <a href="#addListModal" data-toggle="modal" class="btn btn-primary">Add List</a>
+            <a href="#addFolder" data-toggle="modal" class="btn btn-info">Add Folder</a>
+          </div>
+          <div class="list-group">
+            <a href="#" class="list-group-item active"><span class="badge">4</span>Home</a>
+            <a href="#" class="list-group-item"><span class="badge">0</span> Personal</a>
+            <a href="#" class="list-group-item"><span class="badge">29</span>Programming</a>
+            <a href="#" class="list-group-item"><span class="badge">4</span>Work</a>
+            {{>lists}}
+          </div>
+        </div>
+        <div class="tab-pane fade" id="people" style="padding: 0px 19px 19px 19px;">
+          <div class="btn-group btn-group-justified" style="padding: 4% 0%">
+            <a href="#addFriend" data-toggle="modal" class="btn btn-primary">Add Friend</a>
+            <a href="#shareToFriend" data-toggle="modal" class="btn btn-info">Share</a>
+          </div>
+          <div class="list-group">
+            <a href="#" class="list-group-item active"><span class="badge">2</span>Adel Qalieh</a>
+            <a href="#" class="list-group-item"><span class="badge">0</span>Manotej Meka</a>
+            <a href="#" class="list-group-item"><span class="badge">13</span>Prakhar Bhandari</a>
+            {{>people}}
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</template>
