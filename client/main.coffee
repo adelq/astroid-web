@@ -1,5 +1,5 @@
-Session.setDefault("filter", "everything")
-Session.setDefault("sort", "auto")
+Session.setDefault("filter", "Uncompleted")
+Session.setDefault("sortby", "Auto")
 
 Template.todos.tasks = ->
   Tasks.find()
