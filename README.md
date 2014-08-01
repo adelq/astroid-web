@@ -11,6 +11,12 @@ soon!
 If you would like to help out with the Astroid project, you're in the right
 place.
 
+Screenshots
+-----------
+![Desktop](/public/screenshots/desktop.png?raw=true "Desktop")
+![Tablet](/public/screenshots/tablet.png?raw=true "Tablet")
+![Mobile](/public/screenshots/mobile.png?raw=true "Mobile")
+
 Getting Started With Development
 ---------------
 
