@@ -63,6 +63,15 @@ body {
 	-moz-border-radius: 25%;
 	border-radius: 25%;
 }
+
+.completeBox-warning {
+	border-color: #fbb03b;
+}
+
+.completeBox-danger {
+	border-color: #a0222a;
+}
+
 .taskRowTop {
 	padding-left: 45px;
 	cursor: pointer;
