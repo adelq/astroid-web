@@ -27,9 +27,11 @@ Getting Started With Development
 
 3. Use **git** to clone your forked repository
 
-4. Viola! You can start making edits and self-host for testing.
+4. Install [Meteor](https://www.meteor.com/) for development
 
-5. Submit a pull request once your edits are ready to be merged into the main
+5. Viola! You can start making edits and self-host for testing.
+
+6. Submit a pull request once your edits are ready to be merged into the main
 project.
 
 License
