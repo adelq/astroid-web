@@ -1,6 +1,9 @@
 Astroid - Task Management Done Right
 ================================  
 
+**NOTE:** This repository is no longer active, as [Todoist](https://todoist.com/)
+has fulfilled my use cases.
+
 Astroid strives to be a simple and effective organization tool for everyone. It
 will soon come with features like reminders, tagging, widgets, and integration
 with online synchronization services.
